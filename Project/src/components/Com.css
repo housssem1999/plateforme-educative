@@ -1,0 +1,11 @@
+.commencer{
+    z-index: 2;
+    align-items: flex-end;
+    font-size: 40px;
+    
+  }
+  .col{
+    border:2px #1dbcb4 solid;
+    border-radius: 25px;
+    margin: 20px;
+  }

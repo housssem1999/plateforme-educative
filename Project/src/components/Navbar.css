@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  margin-right: 40px;
 }
 
 .navbar-logo {
@@ -36,6 +37,7 @@
   display: flex;
   align-items: center;
   height: 80px;
+  margin-right: 40px;
 }
 
 .nav-links {
@@ -61,12 +63,23 @@
 .menu-icon {
   display: none;
 }
+.logo{
+ 
+  width: 60%;
+}
+.navbar-logo{
+  width: 40%;
+}
+
 
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
   }
-
+  .logo{
+    float: unset;
+    
+  }
   .nav-menu {
     display: flex;
     flex-direction: column;
@@ -84,7 +97,7 @@
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 3;
   }
 
   .nav-links {
@@ -142,5 +155,6 @@
 
   button {
     display: none;
+    
   }
 }

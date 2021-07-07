@@ -3,11 +3,12 @@
 }
 
 .btn {
-  padding: 8px 20px;
+  padding: 8px 2px;
+  width: 120px;
   border-radius: 4px;
   outline: none;
   border: none;
-  font-size: 18px;
+  font-size: 1.3rem;
   color: #fff;
   cursor: pointer;
   background-color: var(--primary);

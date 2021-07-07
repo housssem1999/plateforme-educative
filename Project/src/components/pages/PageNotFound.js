@@ -1,15 +1,16 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
+import '../../App.css'
 import { Link } from 'react-router-dom';
 
 export default function (){
 
   return (
-    <div className="center">
-      <img src="images/img-2.jpg" alt="Page non trouvée"/>
-      <h1>Hey, cette page n'existe pas !</h1> 
-      <Link to="/" className="waves-effect waves-teal btn-flat">
+    <div className="ntfound">
+      <div><h1>Hey, cette page n'existe pas !</h1></div>
+      <div>  <Link to="/" className="retour">
         Retourner à l'accueil
-      </Link>
+      </Link></div>
+    
     </div>
   );
 }
