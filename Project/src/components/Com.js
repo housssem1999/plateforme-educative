@@ -1,5 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { Link, makeStyles } from '@material-ui/core';
+import {ReactComponent as ReactLogo} from "../images/book.svg";
+import {ReactComponent as ReactLogoo} from "../images/teacher.svg";
 import "./Com.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection:"column"
   },
   paper: {
-    padding: theme.spacing(8),
+    padding: theme.spacing(6),
     display:"flex",
     justifyContent:'center',
    
@@ -29,11 +31,14 @@ export default  function Com () {
     const classes =useStyles()
     return(
       <div className={classes.paper}>
-          <div className="col">
-            <div>Apprenant</div>
+          <div className="col" >
+          <ReactLogo style={{alignItems:"center",color:"#1dbcb4"}}/>
+            <Link to="/about" className="label">Apprenant</Link>
           </div>
           <div className="col">
-            <div className="svg-inline--fa fa-book-reader fa-w-16"><img src="../images/book.svg" alt="Coach"></img></div>
+              <ReactLogoo style={{height:"120%",width:"120%",alignItems:"center",color:"#1dbcb4",marginTop:"-5px"}}/>
+              <Link to="/about" className="label">Coach</Link>
+          
           </div>
       </div>
     

@@ -2,7 +2,7 @@
   --primary: #1888ff;
 }
 
-.btn {
+.btnn,.btn {
   padding: 8px 2px;
   width: 120px;
   border-radius: 4px;
@@ -14,7 +14,7 @@
   background-color: var(--primary);
 }
 
-.btn:hover {
+.btnn:hover,.btn:hover {
   padding: 6px 18px;
   transition: all 0.3s ease-out;
   background-color: transparent;

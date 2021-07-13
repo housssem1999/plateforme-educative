@@ -32,14 +32,6 @@
   z-index: 0;
 }
 
-.about {
-  
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
 
 .cours {
  
@@ -79,8 +71,13 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 25px;
+  
 }
+
 .home{
   display: flex;
   flex-direction: column;
+}
+.fas{
+  cursor: pointer;
 }

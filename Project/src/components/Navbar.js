@@ -7,6 +7,7 @@ import StudentForm from './StudentForm';
 import { makeStyles } from '@material-ui/core/styles';
 
 
+
 const useStyles = makeStyles((theme) => ({
   titre: {
     textAlign:"center"
@@ -71,9 +72,8 @@ function Navbar() {
                 Contact 
               </Link>
             </li>
-            <li>
-            <button text="sign-up"    
-                className='btn'onClick={() => { setOpenPopup(true);}} style={{marginTop:"17px"}}>Sign-up</button>  
+            <li className='nav-item'>
+            <button className='nav-links' onClick={() => { setOpenPopup(true);}}  style={{color:"black"}}>Sign-up</button>  
             
             </li>
           </ul>

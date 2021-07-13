@@ -25,11 +25,11 @@ export default function Home() {
 
       <div className="commencer">
         <p>Apprendre en<br></br>s'amusant</p><br></br>
-        <button onClick={() => { setOpencom(true);}} className="btn">Commencer</button>
+        <button onClick={() => { setOpencom(true);}} className="btnn">Commencer</button>
         </div>
       </div>    
         <Commencer title="Qui es-tu ?" className={classes.titre} openCom={openCom} setOpencom={setOpencom}>
-            <Com/>
+            <Com />
         </Commencer>
       </>
 

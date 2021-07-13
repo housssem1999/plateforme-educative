@@ -129,12 +129,13 @@
     cursor: pointer;
   }
 
+
   .fa-times {
     color: #fff;
     font-size: 2rem;
   }
 
-  .nav-links-mobile {
+  .nav-links-mobile ,.nav-item-mobile{
     display: block;
     text-align: center;
     padding: 1.5rem;
@@ -148,13 +149,8 @@
   }
 
   .nav-links-mobile:hover {
-    background: #fff;
+
     color: #1888ff;
     transition: 250ms;
-  }
-
-  button {
-    display: none;
-    
   }
 }

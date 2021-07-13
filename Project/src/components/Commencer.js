@@ -6,7 +6,8 @@ export default function Commencer(props) {
 
 
         return (
-            <Dialog open={openCom} maxWidth="md" style={{borderRadius:"50px",boxShadow:"5px 10px 8px 10px #888888"}} >
+            <Dialog open={openCom} maxWidth="xs"  >
+                
             <DialogTitle style={{backgroundColor:"#391465"}}>
                 <div style={{ display: 'flex' }}>
                     <Typography variant="h6" component="div" style={{ flexGrow: 1 ,textAlign :"center",fontSize:"30px"}}>
@@ -17,9 +18,10 @@ export default function Commencer(props) {
                    <i onClick={()=>{setOpencom(false)}} className="fas fa-times"></i>
                 </div>
             </DialogTitle>
-            <DialogContent style={{ backgroundColor:"#391465"}} >
+            <DialogContent style={{ backgroundColor:"#391465" }} >
                 {children}
             </DialogContent>
+           
         </Dialog>
         );
       }
