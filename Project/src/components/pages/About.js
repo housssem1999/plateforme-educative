@@ -8,32 +8,40 @@ import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexDirection: "row",
-    alignItems: "flex-start"
- 
-  },
   large: {
     width: theme.spacing(20),
     height: theme.spacing(20),
-    margin:"30px"
+    margin:"50px"
   },
 }));
+const list=[
+  {id:1, nom :"Ramy Znakri", profession:"Cofondateur,Web développeur en FullStack JS"},
+  {id:2, nom :"ESSIA BEN HMIDA", profession:"Créatrice de contenu et UI/UX designer"},
+  {id:3, nom :"HASSEN METTICHI", profession:"Digital opérationnel"},
+  {id:4, nom :"YOSRA MEJRI", profession:"Créatrice de contenu et responsable de"},
+];
 
 export default function About() {
   const classes = useStyles();
   return (
-    <div className="about">
+    <>
+    console.log(`About `${list[0].nom})
       <div className="title">
         <h1>Recontrez L'équipe:</h1>
       </div>
+    <div className="about">
       <div className="navavatar">
       <Avatar className={classes.large} src={logo1} />
       <Avatar className={classes.large} src={logo2} />
       <Avatar className={classes.large}  src={logo3} />
       <Avatar className={classes.large}  src={logo4}  />
+      </div>
+        <div className="des">
+          {list.map(item =>(
+            <div className="desc" key={item.id}><h2>{item.nom}</h2><br></br><p>{item.profession}</p></div>
+          ))}
+        </div>
     </div>
-    </div>
+  </>
   );
 }
