@@ -1,50 +1,48 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-var valid = require('validator');
+const bcrypt = require("bcrypt");
 
 
-var usersSchema: any = new mongoose.Schema({
 
-    email: {
+const UserSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: [true, "Please provide username"],
+  },
+  email: {
+    type: String,
+    required: [true, "Please provide email address"],
+    unique: true,
+    match: [
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      "Please provide a valid email",
+    ],
+  },
+  password: {
+    type: String,
+    required: [true, "Please add a password"],
+    minlength: 6,
+    select: false,
+  },
+  resetPasswordToken: String,
+  resetPasswordExpire: Date,
+});
 
-        type: String,
-        Required: true, lowercase:true,trim: true, minlength: 1, unique: true,
-    
-        validate: {
-          validator: valid.isEmail,
-          message: '{VALUE} is not a valid email'
-        }
-      },
-      role: {
-        type: String,
-        enum: ['Admin', 'Coach', 'Apprenant'],
-        default: 'Apprenant'
-      },
-      password: { type: String, Required: true, minlength: 8 },
-      admin: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' },
-      apprenant: { type: mongoose.Schema.Types.ObjectId, ref: 'Apprenant' },
-      coach: { type: mongoose.Schema.Types.ObjectId, ref: 'Coachs' },
-    
-      usersSchema.pre('save', async function (next) {
-        const salt = await bcrypt.genSalt();
-        this.password = await bcrypt.hash(this.password, salt);
-    
-        next()
-    }),
-    usersSchema.statics.login = async function (email, password) {
-        const user = await this.findOne({ email });
-        if (user) {
-            const isAuthenticated = await bcrypt.compare(password, user.password);
-            if (isAuthenticated) {
-                return user;
-            }
-            throw Error('incorrect pwd');
-        }
-        throw Error('incorrect email');
-    
-    }
+UserSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
+});
+
+UserSchema.methods.matchPassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
 
 
-  
-})
-module.exports = mongoose.model('Users', usersSchema)
+
+const User = mongoose.model("User", UserSchema);
+
+module.exports = User;
