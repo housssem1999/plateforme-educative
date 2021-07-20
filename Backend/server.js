@@ -1,23 +1,16 @@
+require('dotenv').config({path:'./config.env'});
 const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-
-require('dotenv').config();
-
 const app = express();
-const port = process.env.PORT || 5000;
+const connectDB = require("./config/db");
 
-app.use(cors());
+connectDB();
+
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
-);
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log("MongoDB database connection established successfully");
-})
+app.use("/api/auth", require("./routes/authRoutes"));
+
+const port = process.env.PORT || 5000;
 
 app.listen(port, ()=>{
-    console.log('server is running');
+    console.log(`server is running ${port}`);
 })  ;
