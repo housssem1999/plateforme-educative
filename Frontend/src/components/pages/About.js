@@ -25,7 +25,7 @@ export default function About() {
   const classes = useStyles();
   return (
     <>
-    console.log(`About `${list[0].nom})
+
       <div className="title">
         <h1>Recontrez L'équipe:</h1>
       </div>

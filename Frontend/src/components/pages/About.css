@@ -15,7 +15,7 @@
     flex-direction: row;
     width: 100%;
     justify-content:space-evenly;
-    margin-top: 30px;
+    margin-top: -11px;
   }
 
   .title{
@@ -29,15 +29,17 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content:space-evenly;
+    justify-content:center;
+    align-items: center;
   }
 
   .desc{
     height:100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-size: 22px;
-    margin: 27px;
+    margin: 30px;
   }
 
   @media screen and (max-width: 960px) {

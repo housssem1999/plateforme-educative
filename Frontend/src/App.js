@@ -7,6 +7,10 @@ import About from './components/pages/About';
 import Course from './components/pages/Course';
 import ContactUs from './components/pages/ContactUs';
 import PageNotFound from './components/pages/PageNotFound';
+import Login from './components/pages/Login';
+import Private from './components/pages/Private';
+import PrivateRoute from './components/PrivateRoute';
+import Register from './components/Register';
 
 
 
@@ -22,6 +26,8 @@ function App() {
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/home' exact component={Home} />
+        <Route path='/register' exact component={Register} />
+        <Route path='/login' exact component={Login} />
         <Route path='/about' component={About} />
         <Route path='/cours' component={Course} />
         <Route path='/contact' component={ContactUs} />

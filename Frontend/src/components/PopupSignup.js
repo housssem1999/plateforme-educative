@@ -2,7 +2,7 @@ import React from 'react';
 import { Dialog,DialogTitle,Typography,DialogContent } from '@material-ui/core';
 import '../App.css';
 
-export default function Login(props) {
+export default function PopupSignup(props) {
     const { title, children, openPopup, setOpenPopup } = props;
 
 

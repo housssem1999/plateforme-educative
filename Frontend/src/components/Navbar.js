@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/img-2.png';
 import './Navbar.css';
-import Login from './Login';
+import PopupSignup from './PopupSignup';
 import StudentForm from './StudentForm';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -80,9 +80,9 @@ function Navbar() {
         
         
       </nav>
-      <Login title="S'inscrire dès maintenant" className={classes.titre} openPopup={openPopup} setOpenPopup={setOpenPopup}>
+      <PopupSignup title="S'inscrire dès maintenant" className={classes.titre} openPopup={openPopup} setOpenPopup={setOpenPopup}>
         <StudentForm/>
-      </Login>
+      </PopupSignup>
     </>
   );
 }

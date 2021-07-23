@@ -13,9 +13,10 @@
     padding: 30px;
   }
   .label{
+    color: #1dbcb4;
     align-items: flex-end;
   }
   .label:hover{
     cursor: pointer;
-    color: #1dbcb4;
+    color: white;
   }

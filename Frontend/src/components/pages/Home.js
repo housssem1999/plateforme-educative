@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const [openCom,setOpencom] =useState(false);
   const classes = useStyles();
+  const username = localStorage.getItem('username');
  
 
   return (<>
@@ -24,7 +25,7 @@ export default function Home() {
     <></>
 
       <div className="commencer">
-        <p>Apprendre en<br></br>s'amusant</p><br></br>
+        <p>Apprendre en<br></br>s'amusant {username}</p><br></br>
         <button onClick={() => { setOpencom(true);}} className="btnn">Commencer</button>
         </div>
       </div>    

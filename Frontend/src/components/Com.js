@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, makeStyles } from '@material-ui/core';
+import {makeStyles } from '@material-ui/core';
 import {ReactComponent as ReactLogo} from "../images/book.svg";
 import {ReactComponent as ReactLogoo} from "../images/teacher.svg";
 import "./Com.css";
@@ -33,11 +33,11 @@ export default  function Com () {
       <div className={classes.paper}>
           <div className="col" >
           <ReactLogo style={{alignItems:"center",color:"#1dbcb4"}}/>
-            <Link to="/about" className="label">Apprenant</Link>
+          <a href="/login" className="label" >Apprenant</a>
           </div>
           <div className="col">
               <ReactLogoo style={{height:"120%",width:"120%",alignItems:"center",color:"#1dbcb4",marginTop:"-5px"}}/>
-              <Link to="/about" className="label">Coach</Link>
+              <a href="/login" className="label" >Coach</a>
           
           </div>
       </div>

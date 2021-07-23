@@ -31,6 +31,7 @@ export default function StudentForm() {
         <Grid item sm={6} xs={6}>
             <div><h2>Enfant</h2></div>
         </Grid>
+        
         <Grid item sm={6} xs={6}>
             <div><label>Nom et prénom</label>    <input className={classes.paper}/></div>
             
@@ -58,7 +59,8 @@ export default function StudentForm() {
             
         </Grid>
         </Grid>
-        <div><br></br><p style={{textAlign:"end"}}>Vous recevrez un email de conformation et de payment</p></div>
+        <div><br></br><br></br><button className="btn" >Sign_up</button></div>
+        <div><p style={{textAlign:"end"}}>Vous recevrez un email de conformation et de payment</p></div>
     </div>
   );
 }

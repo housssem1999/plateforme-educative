@@ -18,8 +18,8 @@ export default function Commencer(props) {
                    <i onClick={()=>{setOpencom(false)}} className="fas fa-times"></i>
                 </div>
             </DialogTitle>
-            <DialogContent style={{ backgroundColor:"#391465" }} >
-                {children}
+           <DialogContent style={{ backgroundColor:"#391465" }} onClick={()=>{setOpencom(false)}} >
+           {children }
             </DialogContent>
            
         </Dialog>
