@@ -1,0 +1,28 @@
+GET http://localhost:5000/api/courses
+
+###
+POST http://localhost:5000/api/courses
+Content-Type: application/json
+
+{
+    "titre": "HTML5",
+    "description" : "cours informatique",
+    "contenu":  "bla bla ",
+    "date" : "28/07/2021"
+}
+
+###
+DELETE http://localhost:5000/api/course/60fc093812ee4222cc018a90
+Content-Type: application/json
+###
+GET  http://localhost:5000/api/course/60fb5760833574374438ead2
+###
+POST  http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"hichem",
+    "email":"hichem@gmail.com",
+    "password":"12345678",
+    "role":"Apprenant"
+}

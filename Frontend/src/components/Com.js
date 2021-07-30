@@ -38,7 +38,6 @@ export default  function Com () {
           <div className="col">
               <ReactLogoo style={{height:"120%",width:"120%",alignItems:"center",color:"#1dbcb4",marginTop:"-5px"}}/>
               <a href="/login" className="label" >Coach</a>
-          
           </div>
       </div>
     

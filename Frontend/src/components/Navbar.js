@@ -8,14 +8,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   titre: {
-    textAlign:"center"
+    textAlign: "center"
   }
-}
-  ));
+}));
+
 function Navbar() {
 
+  const username = localStorage.getItem('username');
   const [openPopup,setOpenPopup] =useState(false);
   const [click, setClick] = useState(false);
   const classes = useStyles();
@@ -56,7 +57,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/cours'
+                to='/courses'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
@@ -73,7 +74,9 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-            <button className='nav-links' onClick={() => { setOpenPopup(true);}}  style={{color:"black"}}>Sign-up</button>  
+            {!username ?
+            <button className='nav-links'  style={{color:"black",textDecoration:"none"}}><a href="/register"style={{color:"black",textDecoration:"none"}}>Sign up  </a></button>
+             : <button className='nav-links'style={{color:"black"}} onClick={()=>{ localStorage.clear();window.location.reload();}}>Deconnect</button> }
             
             </li>
           </ul>

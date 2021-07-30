@@ -1,9 +1,7 @@
 import  React from 'react';
 import {useState, useEffect } from "react";
 import axios from "axios";
-//import { Link } from "react-router-dom";
 import './Login.css';
-
 
 const Login = ({ history }) => {
     const [email, setEmail] = useState("");
@@ -35,8 +33,10 @@ const Login = ({ history }) => {
   
         localStorage.setItem("authToken", data.token);
         localStorage.setItem("username", data.username);
+        localStorage.setItem("role", data.role);
   
         history.push("/");
+        window.location.reload();
       } catch (error) {
         setError(error.response.data.error);
         setTimeout(() => {

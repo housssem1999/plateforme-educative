@@ -25,12 +25,10 @@ const Private = () => {
     };
 
     fetchPrivateDate();
+
   }, []);
-  return error ? (
-    <span className="error-message">{error}</span>
-  ) : (
-    <div>{privateData}</div>
-  );
+  return error ? (<span className="error-message">{error}</span>)
+               : (<div>{privateData}</div>);
 };
 
 export default Private;

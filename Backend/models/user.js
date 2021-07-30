@@ -23,6 +23,30 @@ const UserSchema = new mongoose.Schema({
     minlength: 6,
     select: false,
   },
+  role: {
+    type: String
+  },
+  listCours: {
+    type: Array,
+    default: []
+  },
+  nom: String,
+  prenom: String,
+  tel: Number,
+  niveau: Number,
+  etat: {
+      type: String,
+      enum: ['Accepter', 'En attente' , 'Refuser'],
+      default: 'En attente'
+  },
+  status: {
+      type: String,
+      enum: ['Payée', 'Non Payée'],
+      default: 'Non Payée'
+  },
+  marks: { type: Number, default: '0'},
+  notes: { note: Number},
+
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });
@@ -62,6 +86,4 @@ UserSchema.methods.getResetPasswordToken = function () {
   return resetToken;
 };
 
-const User = mongoose.model("User", UserSchema);
-
-module.exports = User;
+module.exports = mongoose.model('User', UserSchema);

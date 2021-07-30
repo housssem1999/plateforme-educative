@@ -11,14 +11,16 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(20),
     height: theme.spacing(20),
-    margin:"50px"
+    margin:"50px",
+    boxShadow:"5px 5px 5px 5px #888888",
+    opacity:"18"
   },
 }));
 const list=[
   {id:1, nom :"Ramy Znakri", profession:"Cofondateur,Web développeur en FullStack JS"},
   {id:2, nom :"ESSIA BEN HMIDA", profession:"Créatrice de contenu et UI/UX designer"},
   {id:3, nom :"HASSEN METTICHI", profession:"Digital opérationnel"},
-  {id:4, nom :"YOSRA MEJRI", profession:"Créatrice de contenu et responsable de"},
+  {id:4, nom :"YOSRA MEJRI", profession:"Créatrice de contenu et responsable communication"},
 ];
 
 export default function About() {
@@ -38,7 +40,7 @@ export default function About() {
       </div>
         <div className="des">
           {list.map(item =>(
-            <div className="desc" key={item.id}><h2>{item.nom}</h2><br></br><p>{item.profession}</p></div>
+            <div className="desc" key={item.id}><h2  style={{textAlign:"center"}}>{item.nom}</h2><br></br><p>{item.profession}</p></div>
           ))}
         </div>
     </div>

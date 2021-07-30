@@ -7,13 +7,12 @@ const errorHandler = require("./middleware/error");
 
 const corsOptions ={
   origin:'*', 
-  credentials:true,            //access-control-allow-credentials:true
+  credentials:true,            // access-control-allow-credentials:true
   optionSuccessStatus:200
 }
 connectDB();
 
 app.use(express.json());
-
 app.use(cors(corsOptions));
 
 app.get("/", (req, res, next) => {
@@ -21,6 +20,7 @@ app.get("/", (req, res, next) => {
 });
 
 // Connecting Routes
+app.use("/api",require("./routes/courseRoute"));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/private", require("./routes/private"));
 
