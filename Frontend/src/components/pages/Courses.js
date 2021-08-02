@@ -7,7 +7,7 @@ import CardAdd from './CardAdd';
 import { Link } from '@material-ui/core';
 
  
-export default function Courses() {
+export default function Courses(props) {
   const [cours,setCours] = useState([]);
   const config = {  
     baseURL: "http://localhost:5000",
@@ -15,6 +15,16 @@ export default function Courses() {
       "Content-Type": "application/json"
     }
   }
+  const deleteCours = async (id) => {
+    console.log("imchi ");
+      await axios.delete(`/api/courses/${id}`,config);
+      const newCours = cours.filter((cc) => {
+        return cc._id !== id;
+      });
+      
+      setCours(newCours);
+    };
+
   useEffect(()=>{
     const fetchData = async()=>{
         const res= await axios.get('/api/courses',config)
@@ -27,7 +37,7 @@ export default function Courses() {
   return (
     <div className="contenair">
       {cours.map((c)=>
-      <CardCourse className="row" key={c._id} cours={c} />)}
+      <CardCourse clickHandler={deleteCours} className="row" key={c._id} cours={c} />)}
       {
         localStorage.getItem('role') === 'Admin' &&
         <CardAdd onClick={<Link to='/addcourse'></Link>}></CardAdd>

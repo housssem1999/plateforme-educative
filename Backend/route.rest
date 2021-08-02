@@ -5,8 +5,9 @@ POST http://localhost:5000/api/courses
 Content-Type: application/json
 
 {
-    "titre": "HTML5",
-    "description" : "cours informatique",
+    "titre": "Css 3",
+    "type":"Apprenant",
+    "description" : "cours informaiques",
     "contenu":  "bla bla ",
     "date" : "28/07/2021"
 }
@@ -26,3 +27,5 @@ Content-Type: application/json
     "password":"12345678",
     "role":"Apprenant"
 }
+###
+DELETE http://localhost:5000/api/courses/6103f198cc1f640a3c44d7f5
