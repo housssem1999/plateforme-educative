@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const list=[
-  {id:1, nom :"Ramy Znakri", profession:"Cofondateur,Web développeur en FullStack JS"},
+  {id:1, nom :"Ramy Znaki", profession:"Cofondateur,Web développeur en FullStack JS"},
   {id:2, nom :"ESSIA BEN HMIDA", profession:"Créatrice de contenu et UI/UX designer"},
   {id:3, nom :"HASSEN METTICHI", profession:"Digital opérationnel"},
   {id:4, nom :"YOSRA MEJRI", profession:"Créatrice de contenu et responsable communication"},

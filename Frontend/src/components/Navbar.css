@@ -1,11 +1,12 @@
 .navbar {
-  /*background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);*/
+  background-image: url('../images/img-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  margin-right: 40px;
 }
 
 .navbar-logo {

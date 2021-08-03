@@ -19,6 +19,19 @@ exports.getCourse = async(req, res) => {
     }
 };
 
+exports.getCoursesByTitre = async(req, res) => {
+    try {
+        const regex =new RegExp(req.query.term ,'i'); 
+        console.log(regex);
+        const cours = await Course.find(
+            { $or: [{titre: regex},{description: regex}] }
+         )
+        res.json(cours);
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    }
+};
+
 exports.addCourse = async(req, res) => {
     const course = new Course({
         titre: req.body.titre,

@@ -5,6 +5,7 @@ const cors = require('cors');
 const connectDB = require("./config/db");
 const errorHandler = require("./middleware/error");
 
+
 const corsOptions ={
   origin:'*', 
   credentials:true,            // access-control-allow-credentials:true

@@ -16,7 +16,7 @@
   height: 90vh;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 1rem;
 }
 .all{
   background-image: url('./images/img-1.jpg');
@@ -24,22 +24,12 @@
   background-repeat: no-repeat;
 }
 .home {
-  /*background-image: url('./images/img-1.jpg');*/
+  background-image: url('./images/img-1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   z-index: 0;
-}
-
-
-.cours {
- 
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
 }
 
 .contact {
