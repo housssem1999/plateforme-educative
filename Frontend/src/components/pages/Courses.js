@@ -5,7 +5,7 @@ import './Courses.css'
 import '../../App.css';
 import CardAdd from './CardAdd';
 import { Link } from '@material-ui/core';
-import CourseSearch from '../Search';
+
 
  
 export default function Courses(props) {
@@ -26,6 +26,13 @@ export default function Courses(props) {
       
       setCours(newCours);
     };
+
+    const commencer = async(id) =>{
+      const idUser = localStorage.getItem('id');
+      const neww = await axios.put(`/api/users/${idUser}/${id}`,config);
+      const res= await axios.get('/api/users',config);
+      setCours(res.data);
+    }
 
     const handleInputChange = async (e) => {
       const term = e.target.value;
@@ -64,7 +71,7 @@ export default function Courses(props) {
     </div>
     <div className="contenair">      
       {cours.map((c)=>
-      <CardCourse clickHandler={deleteCours} className="row" key={c._id} cours={c} />)}
+      <CardCourse clickHandler={deleteCours} clickCommencer = {commencer} className="row" key={c._id} cours={c} />)}
       {
         localStorage.getItem('role') === 'Admin' &&
         <CardAdd onClick={<Link to='/addcourse'></Link>}></CardAdd>

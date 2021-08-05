@@ -11,6 +11,7 @@ import Login from './components/pages/Login';
 import PrivateRoute from './components/PrivateRoute';
 import Register from './components/Register';
 import AddCourse from './components/pages/AddCourse';
+import DashboardAdmin from './components/pages/DashboardAdmin';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/login' exact component={Login} />
           <Route path='/about' component={About} />
           <Route path='/courses' component={Courses} />
+          <Route path='/admin' component={DashboardAdmin} />
           <Route path='/contact' component={ContactUs} />
           <Route component={PageNotFound}/>
         </Switch>

@@ -21,6 +21,7 @@ app.get("/", (req, res, next) => {
 });
 
 // Connecting Routes
+app.use("/api",require("./routes/userRoutes"));
 app.use("/api",require("./routes/courseRoute"));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/private", require("./routes/private"));

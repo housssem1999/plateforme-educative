@@ -26,17 +26,15 @@ const UserSchema = new mongoose.Schema({
   role: {
     type: String
   },
-  listCours: {
-    type: Array,
-    default: []
-  },
+  listCours: [ {titre:{type :String} }],
+  
   nom: String,
   prenom: String,
   tel: Number,
   niveau: Number,
   etat: {
       type: String,
-      enum: ['Accepter', 'En attente' , 'Refuser'],
+      //enum: ['Accepter', 'En attente' , 'Refuser'],
       default: 'En attente'
   },
   status: {

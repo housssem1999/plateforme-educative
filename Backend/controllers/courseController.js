@@ -1,5 +1,6 @@
 const Course = require('../models/course');
 
+
 exports.getCourses = async(req, res) => {
     try {
         const cours = await Course.find();
@@ -59,6 +60,17 @@ exports.deleteCourse = async(req, res) => {
         res.status(500).json({message: error.message});
     }
 };
+
+{/*exports.calidateCourse = async (req,res) =>{
+    const id =req.params.id;
+    Course.findByIdAndUpdate({
+        "_id" = ObjectId(id)
+    },{
+        $push: {
+            status:{}
+        }
+    })
+}*/}
 
 exports.updateCourse = async(req,res) => {
     const course = new Course({type: req.body});

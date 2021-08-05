@@ -33,6 +33,7 @@ const Login = ({ history }) => {
   
         localStorage.setItem("authToken", data.token);
         localStorage.setItem("username", data.username);
+        localStorage.setItem("id", data.id);
         localStorage.setItem("role", data.role);
   
         history.push("/");
