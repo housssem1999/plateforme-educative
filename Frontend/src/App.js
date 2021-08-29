@@ -12,6 +12,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Register from './components/Register';
 import AddCourse from './components/pages/AddCourse';
 import DashboardAdmin from './components/pages/DashboardAdmin';
+import CourseAdmin from './components/pages/CourseAdmin';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/courses' component={Courses} />
           <Route path='/admin' component={DashboardAdmin} />
           <Route path='/contact' component={ContactUs} />
+          <Route path='/courses/:id' component={CourseAdmin} />
           <Route component={PageNotFound}/>
         </Switch>
       </div>

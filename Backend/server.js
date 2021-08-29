@@ -25,6 +25,7 @@ app.use("/api",require("./routes/userRoutes"));
 app.use("/api",require("./routes/courseRoute"));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/private", require("./routes/private"));
+app.use("/api",require("./routes/quizRoutes"));
 
 // Error Handler Middleware
 app.use(errorHandler);

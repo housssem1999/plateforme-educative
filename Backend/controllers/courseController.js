@@ -1,4 +1,23 @@
 const Course = require('../models/course');
+const File = require('../models/upload');
+
+exports.uploadFile = async (req,res,next) =>{
+    try{
+        const file ={
+            fileName: req.file.originalname,
+            filePath: req.file.path,
+            fileType: req.file.mimetype
+        }
+        const multipleFiles = new File({
+            title: req.body.title,
+            files: file 
+        });
+        await multipleFiles.save();
+        res.status(201).send('File Uploaded Successfully');
+    }catch(error) {
+        res.status(400).send(error.message);
+    }
+}
 
 
 exports.getCourses = async(req, res) => {
@@ -36,7 +55,7 @@ exports.getCoursesByTitre = async(req, res) => {
 exports.addCourse = async(req, res) => {
     const course = new Course({
         titre: req.body.titre,
-        description: req.body.description,
+        description: req.description,
         contenu: req.body.contenu,
         date: req.body.date,
         type: req.body.type
@@ -61,24 +80,12 @@ exports.deleteCourse = async(req, res) => {
     }
 };
 
-{/*exports.calidateCourse = async (req,res) =>{
-    const id =req.params.id;
-    Course.findByIdAndUpdate({
-        "_id" = ObjectId(id)
-    },{
-        $push: {
-            status:{}
-        }
-    })
-}*/}
-
 exports.updateCourse = async(req,res) => {
-    const course = new Course({type: req.body});
-
-    try {
-        // TODO a terminer
-        res.status(200).json(course);
-    } catch (error) {
+    var id = req.params.id
+    try{
+        const updatedCourse = await Course.findByIdAndUpdate({ "_id": id }, { $set: { description: req.body.description}});
+        res.status(200).json(updatedCourse);
+    }catch(error){
         res.status(500).json({message: error.message});
     }
 };
