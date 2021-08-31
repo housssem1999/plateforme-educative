@@ -5,7 +5,7 @@ POST http://localhost:5000/api/courses
 Content-Type: application/json
 
 {
-    "titre": "Css 3",
+    "titre": "tt",
     "type":"Apprenant",
     "description" : "cours informaiques",
     "contenu":  "bla bla ",
@@ -72,7 +72,7 @@ GET  http://localhost:5000/api/quiz/61221fc043f8aa80142ad35a
 ###
 DELETE  http://localhost:5000/api/quiz/61221f683442e64104788307
 ###
-PUT  http://localhost:5000/api/quiz/61221fc043f8aa80142ad35a
+PUT  http://localhost:5000/api/courses/
 Content-Type: application/json
 
 {
@@ -96,4 +96,21 @@ Content-Type: application/json
 {
     "description":"vklkrvrvrvrssc"
 }
+###
+GET http://localhost:5000/api/files
+Content-Type: application/json
+
+{
+    "titre":"rr"
+}
+###
+PUT http://localhost:5000/api/courses/612d7332e574a48878255c9a
+Content-Type: application/json
+
+{
+    "titre":"tt"
+}
+###
+GET http://localhost:5000/api/files/612d7befd05d610c1c71fa4d
+
 ###

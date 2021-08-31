@@ -1,13 +1,15 @@
 const Course = require('../models/course');
+const upload = require('../models/upload');
 const File = require('../models/upload');
+const fs = require('fs');
 
 exports.uploadFile = async (req,res,next) =>{
+    const file ={
+        fileName: req.file.originalname,
+        filePath: req.file.path,
+        fileType: req.file.mimetype
+    }
     try{
-        const file ={
-            fileName: req.file.originalname,
-            filePath: req.file.path,
-            fileType: req.file.mimetype
-        }
         const multipleFiles = new File({
             title: req.body.title,
             files: file 
@@ -18,7 +20,16 @@ exports.uploadFile = async (req,res,next) =>{
         res.status(400).send(error.message);
     }
 }
-
+exports.getFilesByTitle = async(req, res) => {
+    try {
+        const str = req.body.titre;
+        const regex =new RegExp(str,'i');
+        const files = await upload.find( { "title": { $regex: regex } });
+        res.json(files);
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    }
+};
 
 exports.getCourses = async(req, res) => {
     try {
@@ -42,7 +53,6 @@ exports.getCourse = async(req, res) => {
 exports.getCoursesByTitre = async(req, res) => {
     try {
         const regex =new RegExp(req.query.term ,'i'); 
-        console.log(regex);
         const cours = await Course.find(
             { $or: [{titre: regex},{description: regex}] }
          )
@@ -53,14 +63,13 @@ exports.getCoursesByTitre = async(req, res) => {
 };
 
 exports.addCourse = async(req, res) => {
+    
     const course = new Course({
         titre: req.body.titre,
         description: req.description,
-        contenu: req.body.contenu,
         date: req.body.date,
-        type: req.body.type
+        type: req.body.type 
     });
-        
     try {
         const newCours = await course.save();
         res.status(201).json(newCours);
@@ -81,10 +90,31 @@ exports.deleteCourse = async(req, res) => {
 };
 
 exports.updateCourse = async(req,res) => {
-    var id = req.params.id
+    var id = req.params.id;
+    const str = req.body.titre;
+    const regex =new RegExp(str,'i')
+    const files = await upload.find( { "title": { $regex: regex } });
+    const mapp = files.map(i => i._id);
     try{
-        const updatedCourse = await Course.findByIdAndUpdate({ "_id": id }, { $set: { description: req.body.description}});
+        const updatedCourse = await Course.findByIdAndUpdate({ "_id": id }, { $set: { contenue: mapp}});
         res.status(200).json(updatedCourse);
+    }catch(error){
+        res.status(500).json({message: error.message});
+    }
+};
+
+exports.readFiles = async(req,res) => {
+    var idCourse = req.params.idCourse;
+    try{
+        var data =[];
+        const course = await Course.findById({ "_id": idCourse });
+        for(var i=0;i<course.contenue.length;i++){
+            const file = await upload.findById({"_id":course.contenue[i]});
+            console.log(file.files[0].filePath);
+            const item = fs.readFileSync(file.files[0].filePath, {encoding:'utf8', flag:'r'});
+            data.push(item);
+        }
+        res.status(200).json(data);
     }catch(error){
         res.status(500).json({message: error.message});
     }

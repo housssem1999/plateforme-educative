@@ -1,11 +1,16 @@
 var mongoose = require('mongoose')
 
 var coursSchema = new mongoose.Schema({
-    titre: String,
+    titre: {
+        type: String,
+        required: true,
+        unique : true
+    },
     type: String,
+    contenue :[{ type: mongoose.Schema.Types.ObjectId,ref:'upload'}],
     description: String,
-    contenu:  String,
     date: String,
-   });
+
+});
 
 module.exports = mongoose.model('Course', coursSchema);

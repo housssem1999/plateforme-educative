@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage : storage});
 
-const {getCourses,getCourse,addCourse, deleteCourse, getCoursesByTitre, uploadFile, updateCourse} = require('../controllers/courseController');
+const {getCourses,getCourse,addCourse, deleteCourse, getCoursesByTitre, uploadFile, updateCourse, getFilesByTitle, readFiles} = require('../controllers/courseController');
 
 router.route("/courses").get(getCourses);
 router.route("/course").get(getCoursesByTitre);
@@ -23,5 +23,7 @@ router.route("/courses/:id").delete(deleteCourse);
 router.route("/courses/:id").get(getCourse);
 router.route("/courses/:id").put(updateCourse);
 router.route("/upload").post(upload.single("file"),uploadFile);
+router.route("/files").get(getFilesByTitle);
+router.route('/files/:idCourse').get(readFiles);
 
 module.exports = router;
