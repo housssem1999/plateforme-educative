@@ -2,6 +2,7 @@ import  React from 'react';
 import {useState, useEffect } from "react";
 import axios from "axios";
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 const Login = ({ history }) => {
     const [email, setEmail] = useState("");
@@ -51,7 +52,7 @@ const Login = ({ history }) => {
           <form  className="login-screen__form" onSubmit={loginHandler}>
             <h3 className="login-screen__title">Login</h3>
             <div className="group">
-                <div className="form-group">
+                <div className="form-group1">
                 <label htmlFor="email">Email:</label>
                 <input
                     type="email"
@@ -65,7 +66,7 @@ const Login = ({ history }) => {
                     value={email}
                 />
                 </div>
-                <div className="form-group">
+                <div className="form-group1">
                 <label htmlFor="password">
                     Password:{" "}
                 </label>
@@ -89,8 +90,9 @@ const Login = ({ history }) => {
             </button>
     
             <span className="login-screen__subtext">
-              Don't have an account? 
+              Don't have an account <Link to="/register">Register</Link>
             </span>
+            
           </form>
         </div>
       );

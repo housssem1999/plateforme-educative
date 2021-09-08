@@ -37,9 +37,14 @@ exports.updateListeCours = async(req,res) =>{
     var idCourse = req.params.idCourse
     try{
         const cours = await course.findById(idCourse);
+        const user = await User.findById({'_id':idUser});
+        for(var i=0;i<user.listCours.length;i++){
+            if(user.listCours[i]._id == idCourse)
+                return false
+        }
         const updatedUser = await User.findByIdAndUpdate({ "_id": idUser }, 
             { 
-                    $push:{ listCours:{titre: cours.titre}}
+                    $push:{ listCours:{_id:idCourse,titre: cours.titre}}
             },
             { new: true });
         res.status(200).json(updatedUser);
@@ -49,5 +54,15 @@ exports.updateListeCours = async(req,res) =>{
 
         
 }
-
+exports.getCoursesbyuser = async (req,res) =>{
+    const id = req.params.id;
+    try {
+        const user = await User.findById(id);
+        const mycourses = user.listCours;
+        if(mycourses !== null)
+            res.json(mycourses);
+    }catch(err){
+        res.status(500).json({message:err.message});
+    } 
+}
 

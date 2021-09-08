@@ -8,6 +8,7 @@ var coursSchema = new mongoose.Schema({
     },
     type: String,
     contenue :[{ type: mongoose.Schema.Types.ObjectId,ref:'upload'}],
+    quiz:[{ type: mongoose.Schema.Types.ObjectId,ref:'Quiz'}],
     description: String,
     date: String,
 

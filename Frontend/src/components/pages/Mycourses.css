@@ -1,0 +1,15 @@
+.page{
+    margin: 0;
+    background-color: #fff !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.roww{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}

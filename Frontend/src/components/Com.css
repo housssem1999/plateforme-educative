@@ -4,7 +4,7 @@
     font-size: 40px;
     
   }
-  .col{
+  .col1{
     border:2px #1dbcb4 solid;
     border-radius: 25px;
     margin: 5px;
@@ -12,11 +12,11 @@
     flex-direction: column;
     padding: 30px;
   }
-  .label{
+  .label1{
     color: #1dbcb4;
     align-items: flex-end;
   }
-  .label:hover{
+  .label1:hover{
     cursor: pointer;
     color: white;
   }

@@ -1,6 +1,7 @@
 const Course = require('../models/course');
 const upload = require('../models/upload');
 const File = require('../models/upload');
+const Quiz = require('../models/quiz');
 const fs = require('fs');
 
 exports.uploadFile = async (req,res,next) =>{
@@ -89,7 +90,7 @@ exports.deleteCourse = async(req, res) => {
     }
 };
 
-exports.updateCourse = async(req,res) => {
+exports.updateCourseFile = async(req,res) => {
     var id = req.params.id;
     const str = req.body.titre;
     const regex =new RegExp(str,'i')
@@ -97,6 +98,20 @@ exports.updateCourse = async(req,res) => {
     const mapp = files.map(i => i._id);
     try{
         const updatedCourse = await Course.findByIdAndUpdate({ "_id": id }, { $set: { contenue: mapp}});
+        res.status(200).json(updatedCourse);
+    }catch(error){
+        res.status(500).json({message: error.message});
+    }
+};
+
+exports.updateCourseQuiz = async(req,res) => {
+    var id = req.params.id;
+    const str = req.body.titre;
+    const regex =new RegExp(str,'i')
+    const quizes = await Quiz.find( { "titre": { $regex: regex } });
+    const mapp = quizes.map(i => i._id);
+    try{
+        const updatedCourse = await Course.findByIdAndUpdate({ "_id": id }, { $set: { quiz: mapp}});
         res.status(200).json(updatedCourse);
     }catch(error){
         res.status(500).json({message: error.message});

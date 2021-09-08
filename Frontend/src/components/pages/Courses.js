@@ -27,11 +27,9 @@ export default function Courses(props) {
       setCours(newCours);
     };
 
-    const commencer = async(id) =>{
-      const idUser = localStorage.getItem('id');
+    const commencer = async(id,idUser) =>{
       const neww = await axios.put(`/api/users/${idUser}/${id}`,config);
-      const res= await axios.get('/api/users',config);
-      setCours(res.data);
+      
     }
 
     const handleInputChange = async (e) => {
@@ -69,7 +67,7 @@ export default function Courses(props) {
             </div>
         </div>
     </div>
-    <div className="contenair">      
+    <div className="roow">      
       {cours.map((c)=>
       <CardCourse clickHandler={deleteCours} clickCommencer = {commencer} className="row" key={c._id} cours={c} />)}
       {

@@ -31,13 +31,13 @@ export default  function Com () {
     const classes =useStyles()
     return(
       <div className={classes.paper}>
-          <div className="col" >
+          <div className="col1" >
           <ReactLogo style={{alignItems:"center",color:"#1dbcb4"}}/>
-          <a href="/login" className="label" >Apprenant</a>
+          <a href="/login" className="label1" >Apprenant</a>
           </div>
-          <div className="col">
-              <ReactLogoo style={{height:"120%",width:"120%",alignItems:"center",color:"#1dbcb4",marginTop:"-5px"}}/>
-              <a href="/login" className="label" >Coach</a>
+          <div className="col1">
+              <ReactLogoo style={{height:"120%",width:"120%",alignItems:"center",color:"#1dbcb4"}}/>
+              <a href="/login" className="label1">Coach</a>
           </div>
       </div>
     

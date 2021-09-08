@@ -60,7 +60,7 @@ const Register = ({ history }) => {
         <form onSubmit={registerHandler} className="register-screen__form">
           <h3 className="register-screen__title">Register</h3>
           {error && <span className="error-message">{error}</span>}
-          <div className="form-group">
+          <div className="form-group1">
               <label htmlFor="name">First name:</label>
               <input
                 type="text"
@@ -71,7 +71,7 @@ const Register = ({ history }) => {
                 onChange={(e) => setNom(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="name">Last name:</label>
               <input
                 type="text"
@@ -82,7 +82,7 @@ const Register = ({ history }) => {
                 onChange={(e) => setPrenom(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="name">Tel:</label>
               <input
                 type="text"
@@ -93,7 +93,7 @@ const Register = ({ history }) => {
                 onChange={(e) => setTel(Number(e.target.value))}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="name">Username:</label>
               <input
                 type="text"
@@ -104,7 +104,7 @@ const Register = ({ history }) => {
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="email">Email:</label>
               <input
                 type="email"
@@ -115,7 +115,7 @@ const Register = ({ history }) => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="password">Password:</label>
               <input
                 type="password"
@@ -127,7 +127,7 @@ const Register = ({ history }) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="confirmpassword">Confirm Password:</label>
               <input
                 type="password"
@@ -139,7 +139,7 @@ const Register = ({ history }) => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="level">Level:</label>
               <input
                 type="text"
@@ -150,7 +150,7 @@ const Register = ({ history }) => {
                 onChange={(e) => setNiveau(Number(e.target.value))}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group1">
               <label htmlFor="role" style={{marginBottom: '15px'}}>Types:</label>
                   {types.map(type => (
                       <div key={type} style={{marginBottom: '15px'}}>

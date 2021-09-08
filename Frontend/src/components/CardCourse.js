@@ -41,8 +41,9 @@ const useStyles = makeStyles({
 
 export default function CardCourse(props) {
   const classes = useStyles();
+  const idUser = localStorage.getItem('id');
   return (
-    <div className="row">
+    <div className="row" style={{margin:"30px"}}>
       <Card className={classes.root} variant="outlined">
         <CardContent className={classes.bullet}>
             <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -55,10 +56,11 @@ export default function CardCourse(props) {
         </CardContent>
         <CardActions>
           <Typography className={classes.sop} color="textSecondary">
-            <Button variant="contained" color="primary" onClick={() => props.clickCommencer(props.cours._id)}>Commencer</Button>
-            { localStorage.getItem('role') === 'Admin' &&
+          { localStorage.getItem('role') === 'Admin' &&
             <Button variant="contained" color="primary"  onClick={() => props.clickHandler(props.cours._id)}>Delete</Button>
             }
+            <Button variant="contained" color="primary" onClick={() => props.clickCommencer(props.cours._id,idUser)}>Commencer</Button>
+           
           </Typography>
         </CardActions>
       </Card>

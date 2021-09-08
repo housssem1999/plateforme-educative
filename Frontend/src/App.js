@@ -13,6 +13,8 @@ import Register from './components/Register';
 import AddCourse from './components/pages/AddCourse';
 import DashboardAdmin from './components/pages/DashboardAdmin';
 import CourseAdmin from './components/pages/CourseAdmin';
+import QuizApp from './components/pages/Quiz/QuizApp';
+import Mycourses from './components/pages/Mycourses';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path='/admin' component={DashboardAdmin} />
           <Route path='/contact' component={ContactUs} />
           <Route path='/courses/:id' component={CourseAdmin} />
+          <Route path='/quiz/:id' component={QuizApp} />
+          <Route path='/users/mycourses/:id' component={Mycourses}/>
           <Route component={PageNotFound}/>
         </Switch>
       </div>

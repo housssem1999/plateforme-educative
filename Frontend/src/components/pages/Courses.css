@@ -1,18 +1,9 @@
-.contenair{
-    background-color: gainsboro !important;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    
-  
-}
-
 .allpage{
-    background-color: gainsboro !important;
-    margin-top: -5px;
-
+    background-color: #fff !important;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 120px;
 }
 
 .col{
@@ -21,14 +12,13 @@
 }
 
 .roow{
-   display: flex;
-   
-}
-.row{
-    width :400px;
-    height: 350px;
-    margin: 20px;
-
+    background-color: #fff !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
 }
 .input{
     width:100%;

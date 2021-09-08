@@ -1,5 +1,5 @@
 .navbar {
-  background-image: url('../images/img-1.jpg');
+  background-color: #181414;
   background-size: cover;
   background-repeat: no-repeat;
   height: 80px;
@@ -7,6 +7,9 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+}
+.logouser{
+  color: #fff;
 }
 
 .navbar-logo {
@@ -33,25 +36,67 @@
   justify-content: end;
   margin-right: 2rem;
 }
+.nav-menuactive {
+  background: #242222;
+  left: 0;
+  opacity: 1;
+  transition: all 0.5s ease;
+  z-index: 3;
+}
+
+.dropdown-menu{
+  background-color: #242222;
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  position: absolute ;
+  right: 32px;
+  color: #fff;
+  z-index: 12;
+}
+
+.ul-menu{
+  list-style: none;
+  text-align: center;
+}
 
 .nav-item {
   display: flex;
   align-items: center;
   height: 80px;
   margin-right: 40px;
+  color: #fff;
+}
+.vv {
+  width: 20vh;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  outline:none;
 }
 
 .nav-links {
-  color: white;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white !important;
+  text-decoration: none !important  ;
+  list-style-type: none;
   padding: 0.5rem 1rem;
+}
+.bb{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .nav-links:hover {
-  background-color: #1888ff;
+  background-color: #282424;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
+
 
 .fa-bars {
   color: #fff;

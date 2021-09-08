@@ -16,7 +16,7 @@ Content-Type: application/json
 DELETE http://localhost:5000/api/course/60fc093812ee4222cc018a90
 Content-Type: application/json
 ###
-GET  http://localhost:5000/api/course/60fb5760833574374438ead2
+GET  http://localhost:5000/api/coursecourse?term=Node
 ###
 POST  http://localhost:5000/api/auth/register
 Content-Type: application/json
@@ -29,6 +29,21 @@ Content-Type: application/json
     "nom":"hichem",
     "prenom":"Moussa"
 }
+###
+POST  http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "houssem@gmail.com",
+"niveau": "1",
+"nom": "Houssem",
+"password": "12345678",
+"prenom": "Moussa",
+"role": "Apprenant",
+"tel": "52225375",
+"username": "Houssem"
+}
+
 ###
 DELETE http://localhost:5000/api/courses/6103f198cc1f640a3c44d7f5
 ###
@@ -54,23 +69,79 @@ POST  http://localhost:5000/api/quiz
 Content-Type: application/json
 
 {
-    "titre":"titre ",
-    "description":"description",
-    "niveau":"1",
-    "questions":{
-        "question":"ble ble",
-        "choix1":"1",
-        "choix2":"2",
-        "choix3":"3",
-        "choix4":"4",
-        "reponse" : "3"
+    "titre":"titre11",
+    "description":"descrirption",
+    "niveau":"5",
+    "questions": [
+    {
+      "question": "Rolex is a company that specializes in what type of product?",
+      "answers": [
+        {
+          "choix": "Phone",
+          "correct": false
+        },
+        {
+          "choix": "Watches",
+          "correct": true
+        },
+        {
+          "choix": "Food",
+          "correct": false
+        },
+        {
+          "choix": "Cosmetic",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "When did the website `Facebook` launch?",
+      "answers": [
+        {
+          "choix": "2004",
+          "correct": true
+        },
+        {
+          "choix": "2005",
+          "correct": false
+        },
+        {
+          "choix": "2006",
+          "correct": false
+        },
+        {
+          "choix": "2007",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "Who played the character of harry potter in movie?",
+      "answers": [
+        {
+          "choix": "Johnny Deep",
+          "correct": false
+        },
+        {
+          "choix": "Leonardo Di Caprio",
+          "correct": false
+        },
+        {
+          "choix": "Denzel Washington",
+          "correct": false
+        },
+        {
+          "choix": "Daniel Red Cliff",
+          "correct": true
+        }
+      ]
     }
-    
+  ]
 }
 ###
 GET  http://localhost:5000/api/quiz/61221fc043f8aa80142ad35a
 ###
-DELETE  http://localhost:5000/api/quiz/61221f683442e64104788307
+DELETE  http://localhost:5000/api/quiz/612e3a6d39aae874880ebe1b
 ###
 PUT  http://localhost:5000/api/courses/
 Content-Type: application/json
@@ -81,20 +152,20 @@ Content-Type: application/json
     "niveau":"1",
     "questions":{
         "question":"ble ble",
-        "choix1":"1",
-        "choix2":"2",
-        "choix3":"3",
-        "choix4":"4",
+        "choix":"1",
+        "choix":"2",
+        "choix":"3",
+        "choix":"4",
         "reponse" : "4"
     }
     
 }
 ###
-PUT  http://localhost:5000/api/courses/61073112096c9054f851c025
+PUT  http://localhost:5000/api/courses/quiz/612d7befd05d610c1c71fa4d
 Content-Type: application/json
 
 {
-    "description":"vklkrvrvrvrssc"
+    "titre":"rere"
 }
 ###
 GET http://localhost:5000/api/files
@@ -114,3 +185,6 @@ Content-Type: application/json
 GET http://localhost:5000/api/files/612d7befd05d610c1c71fa4d
 
 ###
+GET http://localhost:5000/api/users/mycourses/613937349367a0326837276a
+###
+PUT http://localhost:5000/api/users/61393811abbcd5133823152e/610737b0096c9054f851c051
