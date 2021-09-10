@@ -54,6 +54,24 @@ exports.updateListeCours = async(req,res) =>{
 
         
 }
+
+exports.deleteListeCours = async(req,res) =>{
+    var idUser = req.params.idUser
+    var idCourse = req.params.idCourse
+    try{
+        const cours = await course.findById(idCourse);
+        const updatedUser = await User.findByIdAndUpdate({ "_id": idUser }, 
+            { 
+                    $pull:{ listCours:{_id:idCourse,titre: cours.titre}}
+            },
+            { multi: true });
+        res.status(200).json(updatedUser);
+    }catch(error){
+        res.status(500).json({message: error.message});
+    }
+
+        
+}
 exports.getCoursesbyuser = async (req,res) =>{
     const id = req.params.id;
     try {

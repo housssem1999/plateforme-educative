@@ -5,7 +5,15 @@ var quizSchema = new mongoose.Schema({
     titre : String,
     description : String,
     niveau:  Number,
-    questions : [{question : String, choix1 : String,choix2 : String,choix3 : String,choix4 : String, reponse: String}],
+    score : Number,
+    questions : [{
+        question : String,
+        answers :[
+            {choix : String,correct : Boolean},
+            {choix : String,correct : Boolean},
+            {choix : String,correct : Boolean},
+            {choix : String,correct : Boolean}]
+        }],
   
 })
 module.exports = mongoose.model('Quiz', quizSchema)

@@ -5,6 +5,7 @@ exports.addQuiz = async (req,res) => {
         titre : req.body.titre,
         description : req.body.description,
         niveau : req.body.niveau,
+        score :req.body.score,
         questions: req.body.questions,   
     });
     try {
@@ -47,10 +48,7 @@ exports.updateQuiz = async (req,res) =>{
     var id = req.params.id
 
     try{
-        const updatedQuiz = await Quiz.findByIdAndUpdate({ "_id": id }, { $set: {  titre : req.body.titre,
-            description : req.body.description,
-            niveau : req.body.niveau,
-            questions: req.body.questions } })
+        const updatedQuiz = await Quiz.findByIdAndUpdate({ "_id": id }, { $set: {  score : req.body.score} })
             res.send(updatedQuiz)
         }
         catch(err) {

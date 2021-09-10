@@ -57,9 +57,9 @@ export default function CardCourse(props) {
         <CardActions>
           <Typography className={classes.sop} color="textSecondary">
           { localStorage.getItem('role') === 'Admin' &&
-            <Button variant="contained" color="primary"  onClick={() => props.clickHandler(props.cours._id)}>Delete</Button>
-            }
-            <Button variant="contained" color="primary" onClick={() => props.clickCommencer(props.cours._id,idUser)}>Commencer</Button>
+          <Button variant="contained" color="primary"  onClick={() => props.clickHandler(props.cours._id)}>Delete</Button>
+          }
+          <Button variant="contained" color="primary" onClick={() => props.clickCommencer(props.cours._id,idUser)}>Commencer</Button>
            
           </Typography>
         </CardActions>
